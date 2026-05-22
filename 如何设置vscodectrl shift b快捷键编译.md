@@ -25,14 +25,15 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "cmake",
-            "label": "CMake: 编译",
-            "command": "build",
+            "type": "shell",
+            "label": "ROS2: colcon build",
+            "command": "source /opt/ros/$ROS_DISTRO/setup.bash && colcon build --symlink-install",
+            "args": [],
             "problemMatcher": [],
-            "detail": "CMake 模板 编译 任务",
+            "detail": "ROS 2 工作空间一键编译任务",
             "group": {
                 "kind": "build",
-                "isDefault": true // 确保一键触发编译的关键配置
+                "isDefault": true // 绑定 Ctrl + Shift + B
             }
         }
     ]
